@@ -114,7 +114,19 @@ Scan3R/
 ```
 
 ### MultiScan
-Here we refer to the contents of the folder `processed_data/MultiScan` on GDrive. The data structure is the following:
+
+#### Running preprocessing scripts
+Adjust the path parameters of `MultiScan` in the config files under `configs/preprocess`. Run the following (after changing the `--config-path` in the bash file):
+
+```bash
+$ bash scripts/preprocess/process_multiscan.sh
+```
+
+Our script for MultiScan dataset performs the following additional processing:
+
+- 3D-to-2D projection for 2D segmentation and stores as `gt-projection-seg.pt` for each scan.
+
+Post running preprocessing, the data structure should look like the following:
 
 ```
 MultiScan/
@@ -134,9 +146,4 @@ MultiScan/
 |   └── ...
 ```
 
-#### Running preprocessing scripts
-Adjust the path parameters of `MultiScan` in the config files under `configs/preprocess`. Run the following (after changing the `--config-path` in the bash file):
 
-```bash
-$ bash scripts/preprocess/process_multiscan.sh
-```
