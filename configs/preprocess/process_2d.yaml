@@ -27,6 +27,14 @@ data:
     label_filename : labels.instances.align.annotated.v2.ply
     skip_frames    : 1
 
+  MultiScan:
+    base_dir       : /media/sayan/Expansion/data/datasets/MultiScan
+    process_dir    : ${data.process_dir}/MultiScan
+    processor3D    : MultiScan3DProcessor
+    processor2D    : MultiScan2DProcessor
+    processor1D    : MultiScan1DProcessor
+    skip_frames    : 1
+    
 modality_info:
   1D  :
     feature_extractor: 

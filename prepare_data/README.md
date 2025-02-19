@@ -5,6 +5,7 @@
 This document provides instructions for pre-processing different datasets, including 
 - ScanNet
 - 3RScan
+- MultiScan
 
 ## Prerequisites
 
@@ -16,10 +17,12 @@ Before you begin, simply activate the `crossover` conda environment.
 
 - **3RScan**: Download 3RScan dataset from the [official website](https://github.com/WaldJohannaU/3RScan).
 
+- **MultiScan**: Download MultiScan dataset from the [official website](https://github.com/smartscenes/multiscan).
+
 - **ShapeNet**: Download Shapenet dataset from the [official website](https://shapenet.org/) and unzip.
 
 ### Download Referral and CAD annotations
-We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet & 3RScan) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). Exact instructions for data setup below.
+We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet, 3RScan & MultiScan) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). Exact instructions for data setup below.
 
 #### ScanNet
 1. Run the following to extract ScanNet data 
@@ -92,6 +95,44 @@ Scan3R/
     ├── 3RScan.json
     ├── 3RScan.v2 Semantic Classes - Mapping.csv
     ├── objects.json
+    ├── train_scans.txt
+    ├── test_scans.txt
+    └── sceneverse  
+        └── ssg_ref_rel2_template.json
+```
+
+#### MultiScan
+1. Download `files/` under `processed_data/meta_data/MultiScan/` from GDrive and place under `PATH_TO_MULTISCAN/`.
+2. Download MultiScan data into MultiScan/scenes and run the following to extract MultiScan data 
+ 
+ ```bash
+cd MultiScan/scenes
+unzip '*.zip'
+rm -rf '*.zip'
+```
+3. To generate sequence of RGB images and corresponding camera poses from the ```.mp4``` file, run the follwing
+```bash
+cd prepare_data/multiscan
+python preprocess_2d_multiscan.py --base_dir PATH_TO_MULTISCAN --frame_interval {frame_interval}
+```
+Once completed, the data structure would look like the following:
+```
+MultiScan/
+├── scenes/
+│   ├── scene_00000_00/
+│   │   ├── sequence/ (folder containing rgb images at specified frame interval)
+|   |   ├── frame_ids.txt
+│   │   ├── scene_00000_00.annotations.json
+│   │   ├── scene_00000_00.jsonl
+│   │   ├── scene_00000_00.confidence.zlib
+│   │   ├── scene_00000_00.mp4
+│   │   ├── poses.jsonl
+│   │   ├── scene_00000_00.ply
+│   │   ├── scene_00000_00.align.json
+│   │   ├── scene_00000_00.json
+|   └── 
+└── files
+    ├── scannetv2-labels.combined.tsv
     ├── train_scans.txt
     ├── test_scans.txt
     └── sceneverse  
