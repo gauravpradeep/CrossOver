@@ -8,7 +8,7 @@ from omegaconf import DictConfig
 import h5py
 from common import load_utils 
 from common.constants import ModalityType
-from util import scan3r, scannet, multiscan
+from util import scan3r, scannet, multiscan, arkit
 from typing import Dict, Optional
 
 from preprocess.build import PROCESSOR_REGISTRY
@@ -35,6 +35,8 @@ class MultimodalPreprocessor:
             self.scan_ids = scan3r.get_scan_ids(self.files_dir, self.split)
         elif self.dataset_name == 'MultiScan':
             self.scan_ids = multiscan.get_scan_ids(self.files_dir, self.split)
+        elif self.dataset_name == 'ARKitScenes':
+            self.scan_ids = arkit.get_scan_ids(self.files_dir, self.split)
         else:
             raise NotImplementedError
         

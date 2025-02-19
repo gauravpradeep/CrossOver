@@ -11,6 +11,7 @@ We list the available data used in the current version of CrossOver in the table
 | ScanNet      | `[point, rgb, cad, referral]` | `[point, rgb, floorplan, referral]` |    ❌                       |          ✅                |
 | 3RScan       | `[point, rgb, referral]`      | `[point, rgb, referral]`            |    ✅                       |          ✅                |
 | MultiScan       | `[point, rgb, referral]`      | `[point, rgb, referral]`            |    ❌                       |          ✅                |
+| ARKitScenes       | `[point, rgb, referral]`      | `[point, rgb, referral]`            |    ❌                       |          ✅                |
 
 
 We detail data download and release instructions for preprocessing with scripts for ScanNet + 3RScan. 
@@ -114,7 +115,19 @@ Scan3R/
 ```
 
 ### MultiScan
-Here we refer to the contents of the folder `processed_data/MultiScan` on GDrive. The data structure is the following:
+
+#### Running preprocessing scripts
+Adjust the path parameters of `MultiScan` in the config files under `configs/preprocess`. Run the following (after changing the `--config-path` in the bash file):
+
+```bash
+$ bash scripts/preprocess/process_multiscan.sh
+```
+
+Our script for 3RScan dataset performs the following additional processing:
+
+- 3D-to-2D projection for 2D segmentation and stores as `gt-projection-seg.pt` for each scan.
+
+Post running preprocessing, the data structure should look like the following:
 
 ```
 MultiScan/
@@ -134,9 +147,36 @@ MultiScan/
 |   └── ...
 ```
 
+
+### ARKitScenes
+
 #### Running preprocessing scripts
-Adjust the path parameters of `MultiScan` in the config files under `configs/preprocess`. Run the following (after changing the `--config-path` in the bash file):
+Adjust the path parameters of `ARKitScenes` in the config files under `configs/preprocess`. Run the following (after changing the `--config-path` in the bash file):
 
 ```bash
-$ bash scripts/preprocess/process_multiscan.sh
+$ bash scripts/preprocess/process_arkit.sh
+```
+
+Our script for ARKitScenes dataset performs the following additional processing:
+
+- 3D-to-2D projection for 2D segmentation and stores as `gt-projection-seg.pt` for each scan.
+
+Post running preprocessing, the data structure should look like the following:
+
+```
+ARKitScenes/
+├── objects_chunked/ (object data chunked into hdf5 format for instance baseline training)
+|   ├── train_objects.h5
+|   └── val_objects.h5
+├── scans/
+|   ├── 40753679/
+|   │   ├── gt-projection-seg.pt -> 3D-to-2D projected data  consisting of framewise 2D instance segmentation
+|   │   ├── data1D.pt -> all 1D data + encoded (object referrals + BLIP features) 
+|   │   ├── data2D.pt -> all 2D data + encoded (RGB + floorplan + DinoV2 features)
+|   │   ├── data2D_all_images.pt (RGB features of every image of every scan )
+|   │   ├── data3D.pt -> all 3D data + encoded (Point Cloud + I2PMAE features - object only)
+|   │   ├── object_id_to_label_id_map.pt -> Instance ID to NYU40 Label mapped
+|   │   ├── objectsDataMultimodal.pt -> object data combined from data1D.pt + data2D.pt + data3D.pt (for easier loading)
+|   │   └── sel_cams_on_mesh.png (visualisation of the cameras selected for computing RGB features per scan)
+|   └── ...
 ```

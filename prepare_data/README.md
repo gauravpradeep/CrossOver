@@ -6,6 +6,7 @@ This document provides instructions for pre-processing different datasets, inclu
 - ScanNet
 - 3RScan
 - MultiScan
+- ARKitScenes
 
 ## Prerequisites
 
@@ -19,10 +20,12 @@ Before you begin, simply activate the `crossover` conda environment.
 
 - **MultiScan**: Download MultiScan dataset from the [official website](https://github.com/smartscenes/multiscan).
 
+- **ARKitScenes**: Download ARKitScenes dataset from the [official website](https://github.com/apple/ARKitScenes).
+
 - **ShapeNet**: Download Shapenet dataset from the [official website](https://shapenet.org/) and unzip.
 
 ### Download Referral and CAD annotations
-We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet, 3RScan & MultiScan) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). Exact instructions for data setup below.
+We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet, 3RScan, MultiScan & ARKitScenes) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). Exact instructions for data setup below.
 
 #### ScanNet
 1. Run the following to extract ScanNet data 
@@ -135,6 +138,38 @@ MultiScan/
     ├── scannetv2-labels.combined.tsv
     ├── train_scans.txt
     ├── test_scans.txt
+    └── sceneverse  
+        └── ssg_ref_rel2_template.json
+```
+#### ARKitScenes
+1. Download `files/` under `processed_data/meta_data/ARKitScenes/` from GDrive and place under `PATH_TO_ARKITSCENES/`.
+2. Download ARKitScenes 3dod data into ARKitScenes/scans and run the following to extract MultiScan data 
+ 
+ ```bash
+cd ARKitScenes
+mv 3dod/Training/* scans
+mv 3dod/Validation/* scans
+```
+
+Once completed, the data structure would look like the following:
+```
+MultiScan/
+├── scans/
+│   ├── 40753679/
+│   │   ├── 40753679_frames/ 
+│   │   │    ├── lowres_depth/ (folder containing depth images)
+│   │   │    ├── lowres_wide/ (folder containing rgb images)
+│   │   │    ├── lowres_wide_intrinsics/ (folder containing frame wise camera intrinsics)
+│   │   │    ├── lowres_wide.traj (camera trajectory)
+│   │   ├── 40753679_3dod_annotation.json
+│   │   ├── 40753679_3dod_mesh.ply
+|   └── 
+└── files
+    ├── scannetv2-labels.combined.tsv
+    ├── train_scans.txt
+    ├── val_scans.txt
+    ├── metadata.csv
+    ├── 3dod_train_val_splits.csv
     └── sceneverse  
         └── ssg_ref_rel2_template.json
 ```

@@ -21,7 +21,7 @@ $ bash scripts/train/train_instance_crossover.sh
 ```
 
 #### Train Scene Retrieval Pipeline
-Adjust path/configuration parameters in `configs/train/train_scene_crossover.yaml`. You can also add your customised dataset or choose to train on Scannet, 3RScan & MultiScan or any combination of the same. Run the following:
+Adjust path/configuration parameters in `configs/train/train_scene_crossover.yaml`. You can also add your customised dataset or choose to train on Scannet, 3RScan, MultiScan & ARKitScenes or any combination of the same. Run the following:
 
 ```bash
 $ bash scripts/train/train_scene_crossover.sh
@@ -64,7 +64,7 @@ Various configurable parameters:
 - `--dataset`: dataset name, Scannet/Scan3R
 - `--data_dir`: data directory (eg: `./datasets/Scannet`, assumes similar structure as in `preprocess.md`).
 - `--floorplan_dir`: directory consisting of the rasterized floorplans (this can point to the downloaded preprocessed directory), only for Scannet
-- `--ckpt`: Path to the pre-trained scene crossover model checkpoint (details [here](#checkpoints)), example_path: `./checkpoints/scene_crossover_scannet+scan3r.pth/`).
+- `--ckpt`: Path to the pre-trained scene crossover model checkpoint (details [here](#checkpoints)), example_path: `./checkpoints/scene_crossover_scannet+scan3r.pth/`.
 - `--scan_id`: the scan id from the dataset you'd like to calculate embeddings for (if not provided, embeddings for all scans are calculated).
 
 The script will output embeddings in the same format as provided [here](#generated-embedding-data).
