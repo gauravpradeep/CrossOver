@@ -18,7 +18,7 @@
   </p>
   <h3 align="center">
 
- [![arXiv](https://img.shields.io/badge/arXiv-blue?logo=arxiv&color=%23B31B1B)]() 
+ [![arXiv](https://img.shields.io/badge/arXiv-blue?logo=arxiv&color=%23B31B1B)](https://arxiv.org/abs/2502.15011) 
  [![ProjectPage](https://img.shields.io/badge/Project_Page-CrossOver-blue)](https://sayands.github.io/crossover)
  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
  <div align="center"></div>
@@ -179,7 +179,13 @@ We thank the authors from [3D-VisTa](https://github.com/3d-vista/3D-VisTA), [Sce
 # :page_facing_up: Citation
 
 ```bibtex
-@article{
-
+@misc{sarkar2025crossover,
+        title={CrossOver: 3D Scene Cross-Modal Alignment}, 
+        author={Sayan Deb Sarkar and Ondrej Miksik and Marc Pollefeys and Daniel Barath and Iro Armeni},
+        year={2025},
+        eprint={2502.15011},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2502.15011}
 }
 ```
