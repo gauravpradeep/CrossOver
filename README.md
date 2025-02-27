@@ -1,6 +1,5 @@
 <p align="center">
   <h2 align="center"> CrossOver: 3D Scene Cross-Modal Alignment </h2>
-
   <p align="center">
     <a href="https://sayands.github.io/">Sayan Deb Sarkar</a><sup>1</sup>
     .
@@ -12,7 +11,7 @@
     .
     <a href="https://ir0.github.io/">Iro Armeni</a><sup>1</sup>
   </p>
-
+  <p align="center"> <strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025</strong></p>
   <p align="center">
     <sup>1</sup>Stanford University · <sup>2</sup>Microsoft Spatial AI Lab · <sup>3</sup>ETH Zürich
   </p>
@@ -68,7 +67,8 @@ assume complete data availability across all modalities. We present **CrossOver*
 
 
 # :newspaper: News
-- ![](https://img.shields.io/badge/New!-8A2BE2) [2025-02] We release CrossOver codebase + pre-trained checkpoints. Paper coming out soon, checkout our [website](https://sayands.github.io/crossover/)!
+- ![](https://img.shields.io/badge/New!-8A2BE2) [2025-02] CrossOver is accepted to **CVPR 2025**. Model trained on more datasets with stronger performance to follow, stay tuned!
+- [2025-02] We release CrossOver on arXiv with codebase + pre-trained checkpoints. Checkout our [paper](https://arxiv.org/abs/2502.15011) [website](https://sayands.github.io/crossover/).
 
 # :hammer_and_wrench: Installation
 The code has been tested on: 
