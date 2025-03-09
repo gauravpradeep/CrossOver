@@ -2,7 +2,7 @@ export PYTHONWARNINGS="ignore"
 
 # Change val according to the dataset you want to evaluate on
 
-# # Instance Baseline
+# Instance Baseline
 python run_evaluation.py --config-path "$(pwd)/configs/evaluation" \
 --config-name eval_instance.yaml \
 task.InferenceObjectRetrieval.val=['Scannet'] \
