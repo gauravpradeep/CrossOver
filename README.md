@@ -7,13 +7,14 @@
     .
     <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a><sup>2, 3</sup>
     .
-    <a href="https://www.linkedin.com/in/d%C3%A1niel-bar%C3%A1th-3a489092/">Dániel Béla Baráth</a><sup>3</sup>
+    <a href="https://www.linkedin.com/in/d%C3%A1niel-bar%C3%A1th-3a489092/">Dániel Béla Baráth</a><sup>3, 4, 5</sup>
     .
     <a href="https://ir0.github.io/">Iro Armeni</a><sup>1</sup>
   </p>
-  <p align="center"> <strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025</strong></p>
+  <p align="center"> <strong>CVPR 2025</strong></p>
   <p align="center">
-    <sup>1</sup>Stanford University · <sup>2</sup>Microsoft Spatial AI Lab · <sup>3</sup>ETH Zürich
+    <sup>1</sup>Stanford University · <sup>2</sup>Microsoft Spatial AI Lab · <sup>3</sup>ETH Zürich <br>
+    <sup>4</sup>Google · <sup>5</sup>HUN-REN SZTAKI
   </p>
   <h3 align="center">
 
@@ -179,13 +180,10 @@ We thank the authors from [3D-VisTa](https://github.com/3d-vista/3D-VisTA), [Sce
 # :page_facing_up: Citation
 
 ```bibtex
-@misc{sarkar2025crossover,
-        title={CrossOver: 3D Scene Cross-Modal Alignment}, 
-        author={Sayan Deb Sarkar and Ondrej Miksik and Marc Pollefeys and Daniel Barath and Iro Armeni},
-        year={2025},
-        eprint={2502.15011},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2502.15011}
+@inproceedings{sarkar2025crossover,
+author={Sayan Deb Sarkar and Ondrej Miksik and Marc Pollefeys and Daniel Barath and Iro Armeni},
+title={CrossOver: 3D Scene Cross-Modal Alignment}, 
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+year = {2025}
 }
 ```
