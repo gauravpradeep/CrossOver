@@ -7,14 +7,13 @@
     .
     <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a><sup>2, 3</sup>
     .
-    <a href="https://www.linkedin.com/in/d%C3%A1niel-bar%C3%A1th-3a489092/">Dániel Béla Baráth</a><sup>3, 4, 5</sup>
+    <a href="https://www.linkedin.com/in/d%C3%A1niel-bar%C3%A1th-3a489092/">Dániel Béla Baráth</a><sup>3, 4</sup>
     .
     <a href="https://ir0.github.io/">Iro Armeni</a><sup>1</sup>
   </p>
   <p align="center"> <strong>CVPR 2025</strong></p>
   <p align="center">
-    <sup>1</sup>Stanford University · <sup>2</sup>Microsoft Spatial AI Lab · <sup>3</sup>ETH Zürich <br>
-    <sup>4</sup>Google · <sup>5</sup>HUN-REN SZTAKI
+    <sup>1</sup>Stanford University · <sup>2</sup>Microsoft Spatial AI Lab · <sup>3</sup>ETH Zürich · <sup>4</sup>HUN-REN SZTAKI
   </p>
   <h3 align="center">
 
