@@ -16,7 +16,7 @@ Before you begin, simply activate the `crossover` conda environment.
 
 - **3RScan**: Download 3RScan dataset from the [official website](https://github.com/WaldJohannaU/3RScan).
 
-- **ShapeNet**: Download Shapenet dataset from the [official website](https://shapenet.org/) and unzip.
+- **ShapeNet**: Download ShapenetCore dataset from the [official Huggingface release]([https://shapenet.org/](https://huggingface.co/datasets/ShapeNet/ShapeNetCore) and unzip.
 
 ### Download Referral and CAD annotations
 We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet & 3RScan) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). Exact instructions for data setup below.
