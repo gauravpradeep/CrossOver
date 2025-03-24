@@ -11,7 +11,7 @@
     .
     <a href="https://ir0.github.io/">Iro Armeni</a><sup>1</sup>
   </p>
-  <p align="center"> <strong>CVPR 2025</strong></p>
+  <p align="center"> <strong>Computer Vision And Pattern Recognition (CVPR) 2025</strong></p>
   <p align="center">
     <sup>1</sup>Stanford University · <sup>2</sup>Microsoft Spatial AI Lab · <sup>3</sup>ETH Zürich · <sup>4</sup>HUN-REN SZTAKI
   </p>
@@ -67,7 +67,7 @@ assume complete data availability across all modalities. We present **CrossOver*
 
 
 # :newspaper: News
-- ![](https://img.shields.io/badge/New!-8A2BE2) [2025-02] CrossOver is accepted to **CVPR 2025**. Model trained on more datasets with stronger performance to follow, stay tuned!
+- ![](https://img.shields.io/badge/New!-8A2BE2) [2025-02] CrossOver is accepted to **CVPR 2025**. Model(s) trained on more datasets with stronger performance to follow, stay tuned!
 - [2025-02] We release CrossOver on arXiv with codebase + pre-trained checkpoints. Checkout our [paper](https://arxiv.org/abs/2502.15011) and [website](https://sayands.github.io/crossover/).
 
 # :hammer_and_wrench: Installation
