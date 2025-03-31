@@ -11,15 +11,25 @@ This document provides instructions for pre-processing different datasets, inclu
 ### Environment
 Before you begin, simply activate the `crossover` conda environment.
 
-### Download the Original Datasets
-- **ScanNet**: Download ScanNet v2 data from the [official website](https://github.com/ScanNet/ScanNet).
+### Download the Data
 
-- **3RScan**: Download 3RScan dataset from the [official website](https://github.com/WaldJohannaU/3RScan).
+#### Original Data
+- **ScanNet**: Download ScanNet v2 data from the [official website](https://github.com/ScanNet/ScanNet), we use the official training and validation split from [here](https://github.com/ScanNet/ScanNet/tree/master/Tasks/Benchmark).
+
+- **3RScan**: Download 3RScan dataset from the [official website](https://github.com/WaldJohannaU/3RScan), we use the official (full list of scan ids including reference + rescans) training split from [here](https://campar.in.tum.de/public_datasets/3RScan/train_scans.txt) and validation split from [here](https://campar.in.tum.de/public_datasets/3RScan/val_scans.txt).
+    - Download `3RScan.json` from [here](https://campar.in.tum.de/public_datasets/3RScan/3RScan.json) and `objects.json` from [here](https://campar.in.tum.de/public_datasets/3DSSG/3DSSG/objects.json).
+    - Download the class mapping file `3RScan.v2 Semantic Classes - Mapping.csv` from [here](https://docs.google.com/spreadsheets/d/1eRTJ2M9OHz7ypXfYD-KTR1AIT-CrVLmhJf8mxgVZWnI/edit?gid=0#gid=0).
 
 - **ShapeNet**: Download ShapenetCore dataset from the [official Huggingface release](https://huggingface.co/datasets/ShapeNet/ShapeNetCore) and unzip.
 
-### Download Referral and CAD annotations
-We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet & 3RScan) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). Exact instructions for data setup below.
+#### Referral and CAD annotations
+We use [SceneVerse](https://scene-verse.github.io/) for instance referrals (ScanNet & 3RScan) and [Scan2CAD](https://github.com/skanti/Scan2CAD) for CAD annotations (ScanNet). 
+
+- **SceneVerse** - Download the Scannet and 3RScan data under `annotations/refer` from the [official website](https://scene-verse.github.io/).
+- **Scan2CAD** - Download `full_annotations.json` from the [official website](https://github.com/skanti/Scan2CAD?tab=readme-ov-file#download-dataset).
+
+### Prepare The Data
+Exact instructions for data setup + preparation below:
 
 #### ScanNet
 1. Run the following to extract ScanNet data 
@@ -93,7 +103,7 @@ Scan3R/
     ├── 3RScan.v2 Semantic Classes - Mapping.csv
     ├── objects.json
     ├── train_scans.txt
-    ├── test_scans.txt
+    ├── val_scans.txt
     └── sceneverse  
         └── ssg_ref_rel2_template.json
 ```
