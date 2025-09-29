@@ -59,8 +59,14 @@ def run_inference(args, scan_id=None):
         output_np = {}
         for modality in output['embeddings']:
             output_np[modality] = output['embeddings'][modality].cpu().numpy()
-        torch.save(f'embed_{args.dataset.lower()}_{scan_id}.pt', {'scene': {'scan_id': scan_id, 'scene_embeds': output_np, 'masks': output['masks']}})
         
+        data['scene'].append({'scan_id': scan_id, 'scene_embeds': output_np, 'masks': output['masks']})
+        save_data = {
+            'scene': data['scene']
+        }
+        np.savez(f'embed_{args.dataset.lower()}_{scan_id}.npz', **save_data)
+        log.info(f'Saved embeddings for {scan_id}.')
+
     else:
         for idx, scan_id in tqdm(enumerate(dataset.scan_ids)):
             data_dict = dataset[idx]
@@ -73,7 +79,11 @@ def run_inference(args, scan_id=None):
                 
                 data['scene'].append({'scan_id': scan_id, 'scene_embeds': output_np, 'masks': output['masks']})
             
-        torch.save(data, f'/drive/dumps/multimodal-spaces/release_data/embed_{args.dataset.lower()}.pt')
+        save_data = {
+            'scene': data['scene']
+        }
+        np.savez(f'/drive/dumps/multimodal-spaces/v1.0_release/embed_{args.dataset.lower()}.npz', **save_data)
+        log.info(f'Saved embeddings for {len(data["scene"])} scenes.')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Scene Inference')
